@@ -1,0 +1,157 @@
+/*CLearfix*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix {
+    display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+    display: block;
+}
+ 
+* html .clearfix {
+    height: 1%;
+}
+body{
+	background: #004d40;
+}
+#wrapper{
+	background: #f2f2f2;
+	margin-top: 50px;
+}
+header{
+	background: #00a99d;
+
+}
+header h1, header p.lead{
+	color:#f2f2f2;
+}
+footer{
+	color: #f2f2f2;
+	height: 100%;
+	padding:20px 0 0 0;
+	background: linear-gradient(to bottom, #0d7b68 0%,#004c3f 100%); /* W3C */
+}
+/** Side Nave Styles **/
+.nav-list{
+	padding-left:0;
+}
+.nav-list>li>a {
+	color:#00a99d;
+	margin-left: -20px;
+}
+.nav-list>li>a:hover {
+	color:#222;
+}
+.dropdown-menu>li>a:hover{
+	background: #00a99d;
+}
+hr{
+	border-color: #ddd;
+	border-width:1px;
+	border-bottom:0;
+}
+label{
+	font-weight: bold;
+}
+.navbar-brand {
+	padding: 10px 15px;
+}
+/*.btn-primary{
+	background: #004d40;
+	color: #fff;
+	border: 1px #333 solid;
+}
+.btn-primary:hover{
+	background: #d0e3e0;
+	color: #333;
+	border: 1px #333 solid;
+}
+.btn-default{
+	background: #d0e3e0;
+	color: #333;
+}
+.btn-default:hover{
+	background: #004d40;
+	color: #fff;
+}*/
+input, .form-control, select.form-control, .btn{
+	border-radius: 0;
+}
+.help-block {
+	font-size: 13px;
+}
+.multi-list{
+	margin:0;
+	padding: 10px 0 0 20px;
+	display: block;
+}
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; }
+.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
+
+#slideWrapper div.slide-wrapper:nth-child(3n+4) {  
+  margin-left:0;
+}
+
+
+/*******************
+********************
+RESPONSIVE CALLS
+********************
+********************/
+
+
+/* Large desktop */
+@media (min-width: 1200px) { 
+	.slide-image{
+		height:272px;
+	}
+ }
+ /* Portrait tablet to landscape and desktop */
+@media (min-width: 978px) and (max-width: 1199px) { 
+	.slide-image{
+		height:221px;
+	}
+ }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+	.slide-image{
+		height:260px;
+	}
+ }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+	.slide-image{
+		height:272px;
+	}
+ }
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+	.slide-image{
+		height:223px;
+	}
+ }
+
+
+
+
+
+
