@@ -32,7 +32,7 @@
           <input class="form-control validate" type="text" id="inputEmail" placeholder="Enter Your Email Here"></div>
         <div class="form-group">
           <label for="inputEmail" value="">Phone</label>
-          <input class="form-control validate" type="tel" id="inputPhone" placeholder="XXX-XXX-XXXX"></div>
+          <input class="form-control" type="tel" id="inputPhone" placeholder="XXX-XXX-XXXX"></div>
         <div class="form-group">
           <label for="profilePhotoFileUpload">Avatar Image</label>
           <input class="form-control" type="file" id="profilePhotoFileUpload"></div>
@@ -42,6 +42,9 @@
             <option value="">None</option>
           </select>
         </div>
+        <div class="form-group">
+          <label for="inputEmail" value="">Department</label>
+          <input class="form-control" type="text" id="inputDepartment" placeholder="Enter Your Department Here"></div>
         <div class="form-group">
           <label for="inputBio">Bio</label>
           <textarea rows="15" id="inputBio" class="form-control"></textarea>
@@ -76,9 +79,34 @@
             <div class="col-xs-12 col-md-9">
               <select class="form-control" id="interest">
                 <option value="">None</option>
-                <option value="Foodie">Real Estate</option>
-                <option value="Buying">Buying</option>
-                <option value="Selling">Selling</option>
+                <option value="Advertising">Advertising</option>
+                <option value="Agent Accounting">Agent Accounting</option>
+                <option value="Agent HR &amp; Compliance">Agent HR &amp; Compliance</option>
+                <option value="Area Schools">Area Schools</option>
+                <option value="CMA">CMA</option>
+                <option value="Commercial/Retail">Commercial/Retail</option>
+                <option value="Co-op">Co-op</option>
+                <option value="Credit Reports">Credit Reports</option>
+                <option value="Docusign">Docusign</option>
+                <option value="East Bay">East Bay</option>
+                <option value="Escrow">Escrow</option>
+                <option value="Executive/Corporate ">Executive/Corporate </option>
+                <option value="Relocation">Relocation</option>
+                <option value="Listing Coordination">Listing Coordination</option>
+                <option value="Lofts/Live Work">Lofts/Live Work</option>
+                <option value="Marin">Marin</option>
+                <option value="Multi-unit/Investment Property">Multi-unit/Investment Property</option>
+                <option value="Napa">Napa</option>
+                <option value="Peninsula">Peninsula </option>
+                <option value="Probate">Probate</option>
+                <option value="Rental Assistance/Tours">Rental Assistance/Tours</option>
+                <option value="Rental Listings">Rental Listings</option>
+                <option value="Rentals – Landlord rep">Rentals – Landlord rep</option>
+                <option value="San Francisco">San Francisco</option>
+                <option value="Social Media">Social Media</option>
+                <option value="Sonoma">Sonoma</option>
+                <option value="Technical Help Desk">Technical Help Desk</option>
+                <option value="TIC (Tenants In Common)">TIC (Tenants In Common)</option>
               </select>
             </div>
             <div class="col-xs-12 col-md-3">
@@ -220,6 +248,7 @@
         name =  $("#inputName").val(),
         email =  $("#inputEmail").val(),
         phone =  $("#inputPhone").val(),
+        department =  $("#inputDepartment").val(),
         bio =  $("#inputBio").val(),
         organizationIndex =  $("#organizationField option:selected").val(),
         facebook =  $("#inputFacebook").val(),
@@ -240,12 +269,13 @@
 
       var organization = organizationObjectArray[organizationIndex];
       person.set('organization', organization);
-      person.set('title', organization.get('name'));
+      //person.set('title', organization.get('name'));
 
       //create object field for person
       person.set("name", name);
       person.set("email", email);
       person.set("phoneMain", phone);
+      person.set("department", department);
       person.set("bio", bio);
       person.set("facts", factArray);
       person.set("profileImage", avatar);

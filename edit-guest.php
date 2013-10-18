@@ -54,6 +54,9 @@
 					</select>
 				</div>
 				<div class="form-group">
+		          <label for="inputEmail" value="">Department</label>
+		          <input class="form-control" type="text" id="inputDepartment" placeholder="Enter Your Department Here"></div>
+				<div class="form-group">
 					<label for="inputBio">Bio</label>
 					<textarea rows="13" id="inputBio" class="form-control"></textarea>
 				</div>
@@ -87,9 +90,34 @@
 		            <div class="col-xs-12 col-md-9">
 		              <select class="form-control" id="interest">
 		                <option value="">None</option>
-		                <option value="Foodie">Real Estate</option>
-		                <option value="Buying">Buying</option>
-		                <option value="Selling">Selling</option>
+		                <option value="Advertising">Advertising</option>
+		                <option value="Agent Accounting">Agent Accounting</option>
+		                <option value="Agent HR &amp; Compliance">Agent HR &amp; Compliance</option>
+		                <option value="Area Schools">Area Schools</option>
+		                <option value="CMA">CMA</option>
+		                <option value="Commercial/Retail">Commercial/Retail</option>
+		                <option value="Co-op">Co-op</option>
+		                <option value="Credit Reports">Credit Reports</option>
+		                <option value="Docusign">Docusign</option>
+		                <option value="East Bay">East Bay</option>
+		                <option value="Escrow">Escrow</option>
+		                <option value="Executive/Corporate ">Executive/Corporate </option>
+		                <option value="Relocation">Relocation</option>
+		                <option value="Listing Coordination">Listing Coordination</option>
+                		<option value="Lofts/Live Work">Lofts/Live Work</option>
+		                <option value="Marin">Marin</option>
+		                <option value="Multi-unit/Investment Property">Multi-unit/Investment Property</option>
+		                <option value="Napa">Napa</option>
+		                <option value="Peninsula">Peninsula </option>
+		                <option value="Probate">Probate</option>
+		                <option value="Rental Assistance/Tours">Rental Assistance/Tours</option>
+		                <option value="Rental Listings">Rental Listings</option>
+		                <option value="Rentals – Landlord rep">Rentals – Landlord rep</option>
+		                <option value="San Francisco">San Francisco</option>
+		                <option value="Social Media">Social Media</option>
+		                <option value="Sonoma">Sonoma</option>
+		                <option value="Technical Help Desk">Technical Help Desk</option>
+		                <option value="TIC (Tenants In Common)">TIC (Tenants In Common)</option>
 		              </select>
 		            </div>
 		            <div class="col-xs-12 col-md-3">
@@ -216,6 +244,7 @@
 		populateForm(entityId);
 		if(counter>1){
 			clearFacts();
+			clearInterest();
 			$('#avatraImage').attr('src', '');
 		}
 
@@ -254,6 +283,7 @@
 				$("#inputName").val(nameValue);
 				$("#inputEmail").val(emailValue);
 				$("#inputPhone").val(phoneValue);
+				$("#inputDepartment").val(departmentValue);
 				$("#inputBio").val(bioValue);
 				$("#inputFacebook").val(facebookValue);
 				$("#inputTwitter").val(twitterValue);
@@ -266,12 +296,7 @@
 			    $.each(factArray, function(val, fact) {
 	            	$('ul#factList').append('<li>' + fact + '</li>');
 	            });
-	            //adds and selevyed department
-				if ( departmentValue ) {
-					$("#department option").filter(function(){
-			        	return $(this).val() == departmentValue;
-			        }).prop('selected', true);
-				}
+	            
 			    //Grabs organizations and
 			    if ( organizationValue ) {
 			    	$("#expertiseField option").filter(function(){
@@ -384,6 +409,7 @@
         name =  $("#inputName").val(),
         email =  $("#inputEmail").val(),
         phone =  $("#inputPhone").val(),
+        department =  $("#inputDepartment").val(),
         bio =  $("#inputBio").val(),
         department =  $("#department option:selected").val(),
         organizationIndex =  $("#inputOrganization option:selected").val(),
@@ -411,6 +437,7 @@
       person.set("name", name);
       person.set("email", email);
       person.set("phoneMain", phone);
+      person.set("department", department);
       person.set("bio", bio);
       person.set("facts", factArray);
       person.set("profileImage", avatar);
